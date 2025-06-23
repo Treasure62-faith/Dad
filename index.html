@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Father’s Day Glow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <canvas id="emojiCanvas"></canvas>
+
+  <div class="hero">
+    <h1 class="glow-text">Happy Father’s Day 💙</h1>
+    <p class="tagline">To the man who taught me how to shine 🌠</p>
+  </div>
+
+  <section class="message">
+    <h2>A Message From Me</h2>
+    <p>
+      Every superhero has a cape — but you? You wear your strength in silence, your love in action.
+      You are my forever guide in this cosmic journey.
+    </p>
+  </section>
+
+  <!-- <section class="timeline">
+    <h2>Our Journey</h2>
+    <ul>
+      <li><strong>2010:</strong> You taught me how to ride a bike 🏍</li>
+      <li><strong>2015:</strong> You said “don’t give up” and I didn’t.</li>
+      <li><strong>2020:</strong> We faced the world, stronger together.</li>
+      <li><strong>Now:</strong> Still your proud kid, always 💫</li>
+    </ul>
+  </section> -->
+
+  <section class="glow-button-section">
+    <div class="heart-container">
+    <div class="heart"></div>
+    </div>
+    <button onclick="alert('Sending love across the stars 💫')">💌 Press Me, Dad</button>
+  </section>
+
+  <section class="dadbot">
+  <h2>💬 DadBot Terminal</h2>
+  <div class="terminal" id="terminal">
+    <p>> Initializing DadBot...</p>
+  </div>
+  </section>
+
+  <section class="music">
+    <button onclick="toggleMusic()">🎵 Toggle Music</button>
+    <audio id="bg-music" loop>
+      <source src="./music/SpotiDown.App - 7 Years - Lukas Graham.mp3" type="audio/mpeg" />
+    </audio>
+  </section>
+
+  <section class="tts-section">
+  <button onclick="speakMessage()">🔊 Play My Voice Message</button>
+   </section>
+
+   <section class="photo-gallery">
+  <h2>📸 Dad Moments</h2>
+  <div class="gallery">
+    <img src="./image/unnamed (4).jpg" alt="Dad 1">
+    <img src="./image/unnamed (6).jpg" alt="Dad 1">
+    <img src="./image/unnamed (3).jpg" alt="Dad 1">
+  </div>
+</section>
+
+<section class="rotating-dad">
+  <div class="cube">
+    <div class="face front">BEST</div>
+    <div class="face back">DAD</div>
+  </div>
+</section>
+
+<section class="quote-generator">
+  <h2>💬 Dad's Words of Wisdom</h2>
+  <button onclick="generateQuote()">Inspire Me</button>
+  <p id="dad-quote">Click above to get some dadly wisdom...</p>
+</section>
+
+<section class="love-scroll">
+  <h2>📜 A Letter To Dad</h2>
+  <div class="scroll-letter">
+    <p>
+      Dear Dad,<br><br>
+      Thank you for being my rock, my guide, and my biggest cheerleader.  
+      Every lesson you taught me, every smile you gave — I carry with me forever.  
+      This site is just a small echo of how massive my love is for you.<br><br>
+      Love always,<br>
+      JayJay
+    </p>
+  </div>
+</section>
+
+<section class="dad-joke-game" id="dadGame" style="display:none;">
+  <h2>🕹️ Dad Joke Memory Match</h2>
+  <p>Match the emojis to reveal jokes!</p>
+  <!-- You can use cards or memory tiles here — for now, placeholder -->
+</section>
+
+
+  <footer>
+    <p>Built with light & love by your favorite child 💙</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
