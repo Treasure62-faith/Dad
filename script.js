@@ -269,6 +269,15 @@ function useSkill(id){
   checkXP(); enemyHP-=0;
 }
 
+function toggleGameMusic() {
+  const music = document.getElementById("finalBossTheme");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
 // In canvas click (attack)
 c.onclick = ()=>{
   if(enemyHP<=0||playerHP<=0) return;
