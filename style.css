@@ -397,3 +397,15 @@ footer {
   background: #00ffe7;
   color: #111;
 }
+
+.rpg-launch {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#rpgCanvas {
+  border: 2px solid #00ffe7;
+  display: block;
+  margin: 20px auto;
+  background: linear-gradient(to top, #000, #111);
+}
