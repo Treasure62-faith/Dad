@@ -369,3 +369,31 @@ footer {
     transform: translateY(0);
   }
 }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background: #222;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: #00ffe7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card.flipped {
+  background: #00ffe7;
+  color: #111;
+}

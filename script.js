@@ -187,3 +187,63 @@ if (window.DeviceOrientationEvent) {
     document.body.style.backgroundPosition = `${x * 2}px ${y * 2}px`;
   });
 }
+
+const emojis = ["😂", "😎", "👑", "🥇", "💙", "🛸"];
+const doubled = [...emojis, ...emojis]; // pairs
+let flipped = [];
+let lockBoard = false;
+
+function shuffle(array) {
+  return array.sort(() => 0.5 - Math.random());
+}
+
+function setupGame() {
+  const grid = document.getElementById("cardGrid");
+  const shuffled = shuffle(doubled);
+  grid.innerHTML = "";
+
+  shuffled.forEach((emoji, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.dataset.emoji = emoji;
+    card.innerText = "";
+    card.addEventListener("click", () => flipCard(card));
+    grid.appendChild(card);
+  });
+}
+
+function flipCard(card) {
+  if (lockBoard || card.classList.contains("flipped")) return;
+
+  card.classList.add("flipped");
+  card.innerText = card.dataset.emoji;
+  flipped.push(card);
+
+  if (flipped.length === 2) {
+    lockBoard = true;
+    const [a, b] = flipped;
+    if (a.dataset.emoji === b.dataset.emoji) {
+      flipped = [];
+      lockBoard = false;
+    } else {
+      setTimeout(() => {
+        a.classList.remove("flipped");
+        b.classList.remove("flipped");
+        a.innerText = "";
+        b.innerText = "";
+        flipped = [];
+        lockBoard = false;
+      }, 1000);
+    }
+  }
+}
+
+// Unlock game with Ctrl + G
+document.addEventListener("keydown", function (e) {
+  if (e.key === "g" && e.ctrlKey) {
+    const game = document.getElementById("dadGame");
+    game.style.display = "block";
+    setupGame();
+    alert("🎮 Dad Joke Memory Match: UNLOCKED!");
+  }
+});
